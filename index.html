@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5"
+      name="viewport"
+    />
+	<title>My Web Page</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+  <main>
+    
+  <div class="ftext">
+    <h1>Download Any <br />Video by Link!</h1><br>
+  </div>
+
+  <style>
+    .ftext {
+     
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color:black;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    line-height: 1.2em;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+  }
+   
+    .buttonn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    padding-bottom: 8px;
+  }
+  #myText {
+  font-family: sans-serif;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 5px;
+  width: 80%;
+  max-width: 500px;
+}
+  .btn {
+    
+    height: max-content;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    
+    background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  }
+.box
+{
+  width: 100%;
+      height:max-content;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      
+}
+:root{
+  display:flexbox;
+}
+
+
+  
+  
+  </style>
+<div class="box">
+            <input
+              id="myText"
+              type="text"
+              placeholder="Paste link here!"
+            />
+</div><br>
+<div class="buttonn">         
+   <button
+              class="btn"
+              type="button"
+              onclick="updateVideo()"
+            >
+              Download
+            </button>
+</div>
+  </main>
+  
+      
+  
+  
+
+	<!-- Embedding YouTube-to-MP3 conversion widget v2 using an iframe -->
+	<iframe id="widgetv2Api" src="https://download.ytmp3.su/api/widgetv2?url" 
+	    width="100%" 
+	    height="100%" 
+	    allowtransparency="true" 
+	    scrolling="no" 
+	    style="border:none"></iframe>
+	<!-- Include the resizer code after the <iframe> tag -->
+	<script>iFrameResize({ log: false, minHeight: 400 }, '#widgetv2Api')</script>
+
+	<!-- Add a button to trigger the URL update -->
+
+	
+	<script>
+		function updateVideo() {
+			// Get the value of the video URL input
+			var newUrl = document.getElementById("myText").value;
+			// Update the iframe src attribute with the new URL
+			document.getElementById("widgetv2Api").src = "https://download.ytmp3.su/api/widgetv2?url=" + newUrl;
+		}
+	</script>
+</body>
+</html>
